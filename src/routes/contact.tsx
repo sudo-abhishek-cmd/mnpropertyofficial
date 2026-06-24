@@ -63,17 +63,19 @@ function Contact() {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-          <div className="space-y-6">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
+          <div className="flex flex-col gap-6">
             <FadeIn variant="slide-right">
               <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
                 <h2 className="font-display text-xl font-bold text-foreground">MN Property Office</h2>
                 <ul className="mt-5 space-y-4 text-sm">
                   <li className="flex gap-3">
-                    <MapPin className="h-5 w-5 shrink-0 text-[var(--gold)]" />
+                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[var(--gold)]" />
                     <div>
-                      <div className="font-medium">{SITE.contact.address}</div>
-                      <div className="text-muted-foreground">{SITE.contact.landmark}</div>
+                      <div className="font-medium leading-relaxed">{SITE.contact.address}</div>
+                      <div className="mt-1 text-xs text-muted-foreground">
+                        {SITE.contact.coordinates.lat}, {SITE.contact.coordinates.lng}
+                      </div>
                     </div>
                   </li>
                   <li className="flex gap-3">
@@ -135,13 +137,15 @@ function Contact() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={100} variant="slide-left">
-            <div className="overflow-hidden rounded-2xl border border-border bg-muted shadow-lg">
+          <FadeIn delay={100} variant="slide-left" className="min-h-0 lg:flex lg:flex-col">
+            <div className="flex min-h-[280px] flex-1 flex-col overflow-hidden rounded-2xl border border-border bg-muted shadow-lg sm:min-h-[340px] lg:min-h-[36rem]">
               <iframe
                 src={SITE.map.embed}
-                title="Office Map"
-                className="h-[min(500px,60vh)] w-full min-h-[280px]"
+                title="MN Property office map"
+                className="h-full w-full min-h-[280px] flex-1 sm:min-h-[340px] lg:min-h-[36rem]"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
             </div>
           </FadeIn>

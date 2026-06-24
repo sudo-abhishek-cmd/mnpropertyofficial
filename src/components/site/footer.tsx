@@ -190,7 +190,7 @@ export function SiteFooter() {
               </li>
               <li className="flex gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" />
-                <span>{SITE.contact.address}</span>
+                <span className="leading-relaxed">{SITE.contact.address}</span>
               </li>
             </ul>
             <a

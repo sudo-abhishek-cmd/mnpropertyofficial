@@ -22,12 +22,16 @@ export const SOCIAL_LINKS = {
   x: "https://x.com/mnpropertyofficial",
 };
 
+const OFFICE_COORDS = { lat: 28.649650, lng: 77.183735 } as const;
+const OFFICE_ADDRESS =
+  "11675/2, Satnagar Rd, Karol Bagh West Extension Area, Block 1A, Sat Nagar, Karol Bagh, Delhi, 110005";
+
 export const SITE = {
   contact: {
     phone: "+91 93153 52850",
     email: "mnpropertyofficial@gmail.com",
-    address: "Karol Bagh, Satnagar Central Delhi",
-    landmark: "Near Sablania Chowk, Karol Bagh",
+    address: OFFICE_ADDRESS,
+    coordinates: OFFICE_COORDS,
   },
   hero: {
     headline: "Your Trusted Real Estate Partner in Central Delhi",
@@ -35,9 +39,8 @@ export const SITE = {
     ribbon: "500+ Happy Families  •  10+ Years of Trust",
   },
   map: {
-    embed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0!2d77.19!3d28.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM5JzAwLjAiTiA3N8KwMTEnMjQuMCJF!5e0!3m2!1sen!2sin!4v1",
-    link: "https://maps.google.com/?q=Karol+Bagh+Central+Delhi",
+    embed: `https://maps.google.com/maps?q=${OFFICE_COORDS.lat},${OFFICE_COORDS.lng}&hl=en&z=17&output=embed`,
+    link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`,
   },
 };
 

@@ -188,7 +188,7 @@ function Index() {
               {activeTab === "property" ? "Property Video" : "Office Video"}
             </h3>
           </FadeIn>
-          <div className="mt-6 max-w-4xl">
+          <div className="mt-6 w-full">
             <VideoSection videoUrl={activeVideo} loading={isLoading} />
           </div>
         </div>
@@ -273,8 +273,9 @@ function Index() {
                 <p className="mt-3 text-sm text-[var(--red)]/85 sm:text-base">
                   Tell us what you need — we&apos;ll handpick the best options and share them on WhatsApp.
                 </p>
-                <div className="mt-3 flex items-center gap-2 text-xs text-[var(--navy)]/75 sm:text-sm">
-                  <MapPin className="h-4 w-4 shrink-0" /> {SITE.contact.address}
+                <div className="mt-3 flex items-start gap-2 text-xs text-[var(--navy)]/75 sm:text-sm">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span className="leading-relaxed">{SITE.contact.address}</span>
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 md:justify-end">
