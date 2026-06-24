@@ -50,6 +50,7 @@ export function SiteHeader() {
   };
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-40 transition-all duration-500",
@@ -108,7 +109,7 @@ export function SiteHeader() {
 
         <button
           className={cn(
-            "relative z-50 rounded-lg p-2 transition-colors md:hidden",
+            "relative z-[80] rounded-lg p-2 transition-colors md:hidden",
             open ? "bg-white/10 text-white" : "text-foreground hover:bg-muted",
           )}
           onClick={() => setOpen(!open)}
@@ -117,26 +118,29 @@ export function SiteHeader() {
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
+    </header>
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-black/70 backdrop-blur-sm transition-opacity duration-300 md:hidden",
+          "fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm transition-opacity duration-300 md:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
         )}
         onClick={() => setOpen(false)}
+        aria-hidden={!open}
       />
 
       <div
         className={cn(
-          "mobile-drawer fixed right-0 top-0 z-40 h-full w-[min(320px,88vw)] border-l shadow-2xl transition-transform duration-500 ease-out md:hidden",
+          "mobile-drawer fixed right-0 top-0 z-[70] flex h-full w-[min(320px,88vw)] flex-col border-l border-white/10 bg-[var(--navy-deep)] shadow-2xl transition-transform duration-500 ease-out md:hidden",
           open ? "translate-x-0" : "translate-x-full",
         )}
+        aria-hidden={!open}
       >
-        <div className="border-b border-white/10 px-5 py-5">
+        <div className="shrink-0 border-b border-white/10 bg-[var(--navy)] px-5 py-5">
           <p className="font-display text-lg font-bold text-white">MN Property</p>
-          <p className="text-xs text-white/50">Navigate the site</p>
+          <p className="text-xs text-white/60">Navigate the site</p>
         </div>
-        <nav className="flex flex-col gap-2 px-4 py-5">
+        <nav className="flex flex-1 flex-col gap-2 overflow-y-auto bg-[var(--navy-deep)] px-4 py-5">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -167,6 +171,6 @@ export function SiteHeader() {
           </a>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

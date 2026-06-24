@@ -12,11 +12,14 @@ export const WHATSAPP_NUMBER = "+919643852807";
 export const WHATSAPP_MESSAGE =
   "Hello, I saw the property samples on your website. Is it still available?";
 
+export const SOCIAL_HANDLE = "@mnpropertyofficial";
+
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/mnproperty",
-  facebook: "https://facebook.com/mnproperty",
-  telegram: "https://t.me/mnproperty",
-  youtube: "https://youtube.com/@mnproperty",
+  instagram: "https://instagram.com/mnpropertyofficial",
+  facebook: "https://facebook.com/mnpropertyofficial",
+  telegram: "https://t.me/mnpropertyofficial",
+  youtube: "https://youtube.com/@mnpropertyofficial",
+  x: "https://x.com/mnpropertyofficial",
 };
 
 export const SITE = {

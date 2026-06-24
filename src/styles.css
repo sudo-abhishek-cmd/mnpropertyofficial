@@ -246,12 +246,13 @@
 
 /* ── Mobile drawer ── */
 .mobile-drawer {
-  background: linear-gradient(180deg, oklch(0.13 0.05 285) 0%, oklch(0.09 0.04 285) 100%);
-  border-color: oklch(0.35 0.08 285 / 0.45);
+  background-color: var(--navy-deep);
+  isolation: isolate;
 }
 .mobile-drawer-link {
   color: oklch(0.88 0.02 285);
-  border: 1px solid oklch(1 0 0 / 0.06);
+  background: oklch(0.16 0.04 285);
+  border: 1px solid oklch(1 0 0 / 0.08);
 }
 .mobile-drawer-link:hover,
 .mobile-drawer-link-active {

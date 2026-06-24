@@ -24,7 +24,7 @@ import { VideoSection } from "@/components/site/video-section";
 import { MediaTabs, type MediaTab } from "@/components/site/media-tabs";
 import { useDriveContent } from "@/hooks/use-drive-content";
 import { waLink } from "@/lib/whatsapp";
-import { SITE, SOCIAL_LINKS } from "@/utils/constants";
+import { SITE, SOCIAL_LINKS, SOCIAL_HANDLE } from "@/utils/constants";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80";
 
@@ -45,11 +45,11 @@ const WHY_US = [
 ];
 
 const SOCIAL_DEFS = [
-  { id: "whatsapp", label: "WhatsApp", icon: MessageCircle, color: "#25D366", href: waLink(), desc: "Chat instantly" },
-  { id: "instagram", label: "Instagram", icon: Instagram, color: "#E1306C", href: SOCIAL_LINKS.instagram, desc: "Property reels" },
-  { id: "youtube", label: "YouTube", icon: Youtube, color: "#FF0000", href: SOCIAL_LINKS.youtube, desc: "Walkthroughs" },
-  { id: "facebook", label: "Facebook", icon: Facebook, color: "#1877F2", href: SOCIAL_LINKS.facebook, desc: "Community" },
-  { id: "telegram", label: "Telegram", icon: Send, color: "#29A8E0", href: SOCIAL_LINKS.telegram, desc: "Exclusive deals" },
+  { id: "whatsapp", label: "WhatsApp", icon: MessageCircle, color: "#25D366", href: waLink(), handle: null, desc: "Chat instantly" },
+  { id: "instagram", label: "Instagram", icon: Instagram, color: "#E1306C", href: SOCIAL_LINKS.instagram, handle: SOCIAL_HANDLE, desc: "Property reels" },
+  { id: "youtube", label: "YouTube", icon: Youtube, color: "#FF0000", href: SOCIAL_LINKS.youtube, handle: SOCIAL_HANDLE, desc: "Walkthroughs" },
+  { id: "facebook", label: "Facebook", icon: Facebook, color: "#1877F2", href: SOCIAL_LINKS.facebook, handle: SOCIAL_HANDLE, desc: "Community" },
+  { id: "telegram", label: "Telegram", icon: Send, color: "#29A8E0", href: SOCIAL_LINKS.telegram, handle: SOCIAL_HANDLE, desc: "Exclusive deals" },
 ];
 
 function Index() {
@@ -233,7 +233,7 @@ function Index() {
               </h2>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-5">
-              {SOCIAL_DEFS.map(({ id, label, icon: Icon, color, href, desc }) => (
+              {SOCIAL_DEFS.map(({ id, label, icon: Icon, color, href, handle, desc }) => (
                 <a
                   key={id}
                   href={href}
@@ -249,6 +249,9 @@ function Index() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-white sm:text-sm">{label}</div>
+                    {handle ? (
+                      <div className="mt-0.5 text-[10px] font-medium text-white/70 sm:text-xs">{handle}</div>
+                    ) : null}
                     <div className="mt-0.5 text-[10px] text-white/50 sm:text-xs">{desc}</div>
                   </div>
                 </a>

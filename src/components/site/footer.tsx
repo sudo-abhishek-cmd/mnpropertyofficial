@@ -14,7 +14,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { waLink } from "@/lib/whatsapp";
-import { SITE, SOCIAL_LINKS, WHATSAPP_NUMBER } from "@/utils/constants";
+import { SITE, SOCIAL_LINKS, SOCIAL_HANDLE, WHATSAPP_NUMBER } from "@/utils/constants";
 
 function SocialCard({
   href,
@@ -75,7 +75,7 @@ export function SiteFooter() {
       href: SOCIAL_LINKS.instagram,
       icon: Instagram,
       label: "Instagram",
-      handle: "@mnproperty",
+      handle: SOCIAL_HANDLE,
       color: "linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)",
       bg: "linear-gradient(135deg,rgba(240,148,51,0.15),rgba(188,24,136,0.15))",
       description: "Property reels & stories",
@@ -84,7 +84,7 @@ export function SiteFooter() {
       href: SOCIAL_LINKS.facebook,
       icon: Facebook,
       label: "Facebook",
-      handle: "MN Property",
+      handle: SOCIAL_HANDLE,
       color: "#1877F2",
       bg: "linear-gradient(135deg,rgba(24,119,242,0.15),rgba(24,119,242,0.05))",
       description: "Latest listings & community",
@@ -93,7 +93,7 @@ export function SiteFooter() {
       href: SOCIAL_LINKS.youtube,
       icon: Youtube,
       label: "YouTube",
-      handle: "MN Property Channel",
+      handle: SOCIAL_HANDLE,
       color: "#FF0000",
       bg: "linear-gradient(135deg,rgba(255,0,0,0.15),rgba(255,0,0,0.05))",
       description: "Property walkthroughs",
@@ -102,7 +102,7 @@ export function SiteFooter() {
       href: SOCIAL_LINKS.telegram,
       icon: Send,
       label: "Telegram",
-      handle: "MN Property Deals",
+      handle: SOCIAL_HANDLE,
       color: "#29A8E0",
       bg: "linear-gradient(135deg,rgba(41,168,224,0.15),rgba(41,168,224,0.05))",
       description: "Exclusive deals",
