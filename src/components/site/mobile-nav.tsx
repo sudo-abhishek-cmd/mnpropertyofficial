@@ -39,7 +39,7 @@ export function MobileNav() {
 
   return (
     <nav
-      className="mobile-nav-bar fixed inset-x-0 bottom-0 z-50 border-t md:hidden"
+      className="mobile-nav-bar fixed inset-x-0 bottom-0 z-50 border-t md:hidden will-change-transform"
       aria-label="Mobile navigation"
     >
       <div className="mx-auto flex max-w-lg items-stretch justify-around px-1 pb-[env(safe-area-inset-bottom,0px)]">
@@ -60,7 +60,10 @@ export function MobileNav() {
                     window.history.replaceState(null, "", `/#${item.hash}`);
                   }
                 }}
-                className={cn("mobile-nav-item flex flex-1 flex-col items-center gap-0.5 py-2.5", active && "mobile-nav-item-active")}
+                className={cn(
+                  "mobile-nav-item flex flex-1 flex-col items-center gap-0.5 py-2.5",
+                  active && "mobile-nav-item-active",
+                )}
                 aria-current={active ? "page" : undefined}
               >
                 <Icon className="h-5 w-5" strokeWidth={active ? 2.5 : 2} />
@@ -73,7 +76,10 @@ export function MobileNav() {
             <Link
               key={item.id}
               to={item.to}
-              className={cn("mobile-nav-item flex flex-1 flex-col items-center gap-0.5 py-2.5", active && "mobile-nav-item-active")}
+              className={cn(
+                "mobile-nav-item flex flex-1 flex-col items-center gap-0.5 py-2.5",
+                active && "mobile-nav-item-active",
+              )}
               aria-current={active ? "page" : undefined}
             >
               <Icon className="h-5 w-5" strokeWidth={active ? 2.5 : 2} />

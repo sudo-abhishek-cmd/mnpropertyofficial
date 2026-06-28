@@ -8,7 +8,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="group fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--whatsapp)] text-white shadow-[var(--shadow-luxury)] transition-all duration-300 hover:scale-110 hover:shadow-2xl sm:bottom-6 sm:right-6 animate-float whatsapp-float-mobile"
+      className="group fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--whatsapp)] text-white shadow-[var(--shadow-luxury)] transition-all duration-300 hover:scale-110 hover:shadow-2xl sm:bottom-6 sm:right-6 animate-float whatsapp-float-mobile will-change-transform"
     >
       <MessageCircle className="h-7 w-7 transition-transform group-hover:scale-110" />
       <span className="absolute -top-1 -right-1 flex h-3 w-3">

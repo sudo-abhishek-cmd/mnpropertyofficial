@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { waLink } from "@/lib/whatsapp";
 import { SITE, SOCIAL_LINKS, SOCIAL_HANDLE, WHATSAPP_NUMBER } from "@/utils/constants";
+import logoImg from "@/assets/logo.png";
 
 function SocialCard({
   href,
@@ -39,12 +40,12 @@ function SocialCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative overflow-hidden rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-5"
+      className="group relative overflow-hidden rounded-2xl p-4 border border-[#2B2B2B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-luxury)] sm:p-5"
       style={{ background: bg }}
     >
       <div className="relative z-10 flex items-start justify-between">
         <div
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-white shadow-lg sm:h-12 sm:w-12"
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-black shadow-lg sm:h-12 sm:w-12"
           style={{ background: color }}
         >
           <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -56,7 +57,7 @@ function SocialCard({
         <div className="text-xs text-white/60 sm:text-sm">{handle}</div>
         <div className="mt-1 text-[10px] text-white/50 sm:mt-2 sm:text-xs">{description}</div>
       </div>
-      <div className="relative z-10 mt-3 flex items-center gap-1 text-xs font-semibold text-white/70 group-hover:text-white">
+      <div className="relative z-10 mt-3 flex items-center gap-1 text-xs font-semibold text-[var(--gold)] group-hover:underline">
         Follow <ArrowRight className="h-3 w-3" />
       </div>
     </a>
@@ -76,8 +77,8 @@ export function SiteFooter() {
       icon: Instagram,
       label: "Instagram",
       handle: SOCIAL_HANDLE,
-      color: "linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)",
-      bg: "linear-gradient(135deg,rgba(240,148,51,0.15),rgba(188,24,136,0.15))",
+      color: "linear-gradient(135deg, #D4AF37 0%, #F6E27A 50%, #C99700 100%)",
+      bg: "#131313",
       description: "Property reels & stories",
     },
     {
@@ -85,8 +86,8 @@ export function SiteFooter() {
       icon: Facebook,
       label: "Facebook",
       handle: SOCIAL_HANDLE,
-      color: "#1877F2",
-      bg: "linear-gradient(135deg,rgba(24,119,242,0.15),rgba(24,119,242,0.05))",
+      color: "linear-gradient(135deg, #D4AF37 0%, #F6E27A 50%, #C99700 100%)",
+      bg: "#131313",
       description: "Latest listings & community",
     },
     {
@@ -94,8 +95,8 @@ export function SiteFooter() {
       icon: Youtube,
       label: "YouTube",
       handle: SOCIAL_HANDLE,
-      color: "#FF0000",
-      bg: "linear-gradient(135deg,rgba(255,0,0,0.15),rgba(255,0,0,0.05))",
+      color: "linear-gradient(135deg, #D4AF37 0%, #F6E27A 50%, #C99700 100%)",
+      bg: "#131313",
       description: "Property walkthroughs",
     },
     {
@@ -103,8 +104,8 @@ export function SiteFooter() {
       icon: Send,
       label: "Telegram",
       handle: SOCIAL_HANDLE,
-      color: "#29A8E0",
-      bg: "linear-gradient(135deg,rgba(41,168,224,0.15),rgba(41,168,224,0.05))",
+      color: "linear-gradient(135deg, #D4AF37 0%, #F6E27A 50%, #C99700 100%)",
+      bg: "#131313",
       description: "Exclusive deals",
     },
     {
@@ -112,15 +113,15 @@ export function SiteFooter() {
       icon: MessageCircle,
       label: "WhatsApp",
       handle: WHATSAPP_NUMBER,
-      color: "#25D366",
-      bg: "linear-gradient(135deg,rgba(37,211,102,0.15),rgba(37,211,102,0.05))",
+      color: "linear-gradient(135deg, #D4AF37 0%, #F6E27A 50%, #C99700 100%)",
+      bg: "#131313",
       description: "Chat with our agents",
     },
   ];
 
   return (
-    <footer className="mt-16 overflow-x-hidden bg-[var(--navy-deep)] sm:mt-24">
-      <div className="border-b border-white/10 px-4 py-12 sm:py-16">
+    <footer className="mt-16 overflow-x-hidden bg-[#0A0A0A] border-t border-[#2A2A2A] sm:mt-24">
+      <div className="border-b border-[#2A2A2A] px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-[var(--gold)]">
             Stay Connected
@@ -140,16 +141,25 @@ export function SiteFooter() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--gold)] to-yellow-500 font-display text-xl font-bold text-[var(--navy-deep)] sm:h-12 sm:w-12 sm:text-2xl">
-                M
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#131313] border border-[#2B2B2B] sm:h-12 sm:w-12">
+                <img
+                  src={logoImg}
+                  alt="MN Property Logo"
+                  className="h-full w-full object-contain p-0.5"
+                />
               </div>
               <div>
-                <div className="font-display text-lg font-bold text-white sm:text-xl">MN Property</div>
-                <div className="text-[10px] uppercase tracking-widest text-[var(--gold)]">Central Delhi</div>
+                <div className="font-display text-lg font-bold text-white sm:text-xl">
+                  MN Property
+                </div>
+                <div className="text-[10px] uppercase tracking-widest text-[var(--gold)]">
+                  Central Delhi
+                </div>
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
-              Trusted real estate partners in Central Delhi. Helping families buy, sell, rent & invest with confidence.
+              Trusted real estate partners in Central Delhi. Helping families buy, sell, rent &
+              invest with confidence.
             </p>
           </div>
 
@@ -164,7 +174,7 @@ export function SiteFooter() {
                     to={to}
                     className="group flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[var(--gold)]"
                   >
-                    <Icon className="h-3.5 w-3.5" /> {label}
+                    <Icon className="h-3.5 w-3.5 text-[var(--gold)]" /> {label}
                   </Link>
                 </li>
               ))}
@@ -178,7 +188,10 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm text-white/60">
               <li className="flex gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" />
-                <a href={`tel:${SITE.contact.phone.replace(/\s/g, "")}`} className="hover:text-white">
+                <a
+                  href={`tel:${SITE.contact.phone.replace(/\s/g, "")}`}
+                  className="hover:text-white"
+                >
                   {SITE.contact.phone}
                 </a>
               </li>
@@ -197,7 +210,7 @@ export function SiteFooter() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#25D366]/15 px-4 py-2.5 text-sm font-semibold text-[#25D366]"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] px-4 py-2.5 text-sm font-semibold text-[var(--gold)] transition-colors hover:bg-[var(--gold)] hover:text-black"
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
             </a>
@@ -205,7 +218,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-4 py-4 sm:py-5">
+      <div className="border-t border-[#2A2A2A] px-4 py-4 sm:py-5">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-center text-xs text-white/40 sm:flex-row sm:text-left">
           <span>© {new Date().getFullYear()} MN Property. All rights reserved.</span>
           <span>

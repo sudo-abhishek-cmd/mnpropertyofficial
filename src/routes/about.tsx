@@ -34,22 +34,29 @@ function About() {
         dark
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-20">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 sm:gap-6">
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-24">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
           {stats.map((s, i) => (
             <FadeIn key={s.l} delay={i * 100} variant="scale-in">
-              <div className="group rounded-2xl border border-border/80 bg-card p-6 text-center shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--gold)]/30 hover:shadow-lg">
+              <div className="group rounded-2xl border border-[#2B2B2B] bg-[#131313] p-6 text-center shadow-md transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)]">
                 <s.icon className="mx-auto h-8 w-8 text-[var(--gold)] transition-transform duration-300 group-hover:scale-110" />
-                <div className="mt-3 font-display text-3xl font-bold text-[var(--coral)]">{s.n}</div>
-                <div className="text-sm text-muted-foreground">{s.l}</div>
+                <div className="mt-4 font-display text-3xl font-bold bg-gradient-gold bg-clip-text text-transparent">
+                  {s.n}
+                </div>
+                <div className="mt-1 text-sm text-[#9A9A9A] font-medium tracking-wide uppercase text-xs">
+                  {s.l}
+                </div>
               </div>
             </FadeIn>
           ))}
         </div>
 
-        <FadeIn delay={200} className="mx-auto mt-20 max-w-3xl">
-          <h2 className="font-display text-3xl font-bold text-foreground">Our Promise</h2>
-          <div className="mt-6 space-y-6 text-lg leading-relaxed text-foreground/85">
+        <FadeIn
+          delay={200}
+          className="mx-auto mt-20 max-w-3xl border border-[#2B2B2B] bg-[#131313] p-8 md:p-12 rounded-3xl shadow-xl"
+        >
+          <h2 className="font-display text-3xl font-bold text-white tracking-wide">Our Promise</h2>
+          <div className="mt-6 space-y-6 text-base md:text-lg leading-relaxed text-[#D8D8D8]">
             <p>
               Every property we list is personally verified. Every client gets the same care —
               whether you&apos;re a first-time renter or a seasoned investor.

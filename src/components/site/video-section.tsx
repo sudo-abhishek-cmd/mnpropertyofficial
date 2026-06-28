@@ -17,7 +17,9 @@ export function VideoSection({ videoUrl, loading }: VideoSectionProps) {
   if (!videoUrl) {
     return (
       <FadeIn>
-        <div className={`${frameClass} flex flex-col items-center justify-center border border-dashed border-border bg-muted px-4 text-center`}>
+        <div
+          className={`${frameClass} flex flex-col items-center justify-center border border-dashed border-border bg-muted px-4 text-center`}
+        >
           <Play className="mb-3 h-10 w-10 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground">Video walkthrough coming soon.</p>
         </div>
@@ -27,7 +29,9 @@ export function VideoSection({ videoUrl, loading }: VideoSectionProps) {
 
   return (
     <FadeIn variant="scale-in">
-      <div className={`${frameClass} border border-border/80 bg-[var(--navy-deep)] shadow-lg ring-1 ring-white/10`}>
+      <div
+        className={`${frameClass} border border-border/80 bg-[var(--navy-deep)] shadow-lg ring-1 ring-white/10`}
+      >
         <iframe
           src={videoUrl}
           title="Property walkthrough video"

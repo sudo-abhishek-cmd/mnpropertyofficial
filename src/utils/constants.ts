@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = {
   x: "https://x.com/mnpropertyofficial",
 };
 
-const OFFICE_COORDS = { lat: 28.649650, lng: 77.183735 } as const;
+const OFFICE_COORDS = { lat: 28.64965, lng: 77.183735 } as const;
 const OFFICE_ADDRESS =
   "11675/2, Satnagar Rd, Karol Bagh West Extension Area, Block 1A, Sat Nagar, Karol Bagh, Delhi, 110005";
 

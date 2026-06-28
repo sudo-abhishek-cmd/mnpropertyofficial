@@ -23,8 +23,15 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="font-display text-7xl font-bold text-[var(--coral)]">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">The page you're looking for doesn't exist.</p>
-        <Link to="/" className="mt-6 inline-flex rounded-md bg-[var(--gradient-gold)] px-4 py-2 text-sm font-semibold text-[var(--navy-deep)]">Go home</Link>
+        <p className="mt-2 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist.
+        </p>
+        <Link
+          to="/"
+          className="mt-6 inline-flex rounded-md bg-[var(--gradient-gold)] px-4 py-2 text-sm font-semibold text-[var(--navy-deep)]"
+        >
+          Go home
+        </Link>
       </div>
     </div>
   );
@@ -33,15 +40,27 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => { reportLovableError(error, { boundary: "tanstack_root_error_component" }); }, [error]);
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold">Something went wrong</h1>
         <p className="mt-2 text-sm text-muted-foreground">Please try again.</p>
         <div className="mt-6 flex justify-center gap-2">
-          <button onClick={() => { router.invalidate(); reset(); }} className="rounded-md bg-[var(--gradient-gold)] px-4 py-2 text-sm font-semibold text-[var(--navy-deep)]">Try again</button>
-          <a href="/" className="rounded-md border border-input px-4 py-2 text-sm font-semibold">Home</a>
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="rounded-md bg-[var(--gradient-gold)] px-4 py-2 text-sm font-semibold text-[var(--navy-deep)]"
+          >
+            Try again
+          </button>
+          <a href="/" className="rounded-md border border-input px-4 py-2 text-sm font-semibold">
+            Home
+          </a>
         </div>
       </div>
     </div>
@@ -54,9 +73,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "MN Property — Trusted Real Estate in Central Delhi" },
-      { name: "description", content: "Buy, sell, rent and invest in Central Delhi properties with MN Property. 500+ happy families, 10+ years of trust." },
+      {
+        name: "description",
+        content:
+          "Buy, sell, rent and invest in Central Delhi properties with MN Property. 500+ happy families, 10+ years of trust.",
+      },
       { property: "og:title", content: "MN Property — Trusted Real Estate in Central Delhi" },
-      { property: "og:description", content: "Buy, sell, rent and invest in Central Delhi properties." },
+      {
+        property: "og:description",
+        content: "Buy, sell, rent and invest in Central Delhi properties.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

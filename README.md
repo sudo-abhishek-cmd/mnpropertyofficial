@@ -20,13 +20,13 @@ A vibrant, mobile-first landing page for **MN Property** — a real estate broke
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Framework | React 19 + TypeScript |
-| Routing | TanStack Router / TanStack Start |
-| Styling | Tailwind CSS v4 |
-| Data | Google Drive API v3 (client-side fetch) |
-| Fonts | Inter + Playfair Display |
+| Layer     | Technology                              |
+| --------- | --------------------------------------- |
+| Framework | React 19 + TypeScript                   |
+| Routing   | TanStack Router / TanStack Start        |
+| Styling   | Tailwind CSS v4                         |
+| Data      | Google Drive API v3 (client-side fetch) |
+| Fonts     | Inter + Playfair Display                |
 
 ---
 
@@ -72,10 +72,10 @@ All site settings live in **`src/utils/constants.ts`**.
 
 Create **two public folders** in Google Drive:
 
-| Folder | Purpose | Contents |
-|--------|---------|----------|
+| Folder              | Purpose         | Contents                                      |
+| ------------------- | --------------- | --------------------------------------------- |
 | **Property folder** | Listing samples | Up to 6 images (jpg/png/webp) + 1 video (mp4) |
-| **Office folder** | Office showcase | Up to 6 images + 1 video |
+| **Office folder**   | Office showcase | Up to 6 images + 1 video                      |
 
 **Steps:**
 
@@ -104,7 +104,8 @@ export const GOOGLE_DRIVE_API_KEY = "your-api-key";
 
 ```typescript
 export const WHATSAPP_NUMBER = "+919643852807";
-export const WHATSAPP_MESSAGE = "Hello, I saw the property samples on your website. Is it still available?";
+export const WHATSAPP_MESSAGE =
+  "Hello, I saw the property samples on your website. Is it still available?";
 ```
 
 ### Social links
@@ -134,6 +135,7 @@ Google Drive acts as your **hidden admin panel**:
 4. **No code changes or redeploy needed** — visitors get fresh content within ~5 minutes (browser cache)
 
 **Tips:**
+
 - Use descriptive filenames (e.g. `3bhk-karol-bagh-living-room.jpg`)
 - Keep images under 2 MB for fast loading
 - Videos should be MP4 for best compatibility
@@ -169,11 +171,11 @@ src/
 
 ## Pages
 
-| Route | Description |
-|-------|-------------|
-| `/` | Hero, property/office gallery & videos, social links, CTA |
-| `/about` | Company story and stats |
-| `/contact` | Office details, map, QR code, share buttons |
+| Route      | Description                                               |
+| ---------- | --------------------------------------------------------- |
+| `/`        | Hero, property/office gallery & videos, social links, CTA |
+| `/about`   | Company story and stats                                   |
+| `/contact` | Office details, map, QR code, share buttons               |
 
 ---
 
@@ -187,6 +189,7 @@ On screens **below 768px**:
 - **Gallery grid** — 1 column on mobile, 2 on tablet, 3 on desktop
 
 Hash links:
+
 - `/#gallery` → Property tab
 - `/#office` → Office tab
 
@@ -196,13 +199,13 @@ Hash links:
 
 The site uses a **dark theme** by default — deep violet surfaces with coral and teal accents. Tokens live in `src/styles.css`:
 
-| Token | Usage |
-|-------|--------|
-| `--background` / `--card` | Page and card surfaces |
-| `--foreground` | Body and heading text |
-| `--coral` | Primary accent, CTAs, active nav |
-| `--teal` | Secondary accent, labels |
-| `--navy-deep` / `--navy` | Hero overlays, footer, gradients |
+| Token                     | Usage                            |
+| ------------------------- | -------------------------------- |
+| `--background` / `--card` | Page and card surfaces           |
+| `--foreground`            | Body and heading text            |
+| `--coral`                 | Primary accent, CTAs, active nav |
+| `--teal`                  | Secondary accent, labels         |
+| `--navy-deep` / `--navy`  | Hero overlays, footer, gradients |
 
 To tweak colors, edit the `:root` block in `src/styles.css`.
 
@@ -210,13 +213,13 @@ To tweak colors, edit the `:root` block in `src/styles.css`.
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server (port 8080) |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format with Prettier |
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `npm run dev`     | Start dev server (port 8080) |
+| `npm run build`   | Production build             |
+| `npm run preview` | Preview production build     |
+| `npm run lint`    | Run ESLint                   |
+| `npm run format`  | Format with Prettier         |
 
 ---
 

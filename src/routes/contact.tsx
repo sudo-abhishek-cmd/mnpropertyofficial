@@ -11,7 +11,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — MN Property" },
-      { name: "description", content: "Visit our office in Central Delhi or message us on WhatsApp." },
+      {
+        name: "description",
+        content: "Visit our office in Central Delhi or message us on WhatsApp.",
+      },
       { property: "og:title", content: "Contact — MN Property" },
       { property: "og:description", content: "Visit our office in Central Delhi." },
     ],
@@ -62,41 +65,47 @@ function Contact() {
         dark
       />
 
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:py-24">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
           <div className="flex flex-col gap-6">
             <FadeIn variant="slide-right">
-              <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
-                <h2 className="font-display text-xl font-bold text-foreground">MN Property Office</h2>
-                <ul className="mt-5 space-y-4 text-sm">
+              <div className="rounded-2xl border border-[#2B2B2B] bg-[#131313] p-6 shadow-md sm:p-8 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] transition-all duration-300">
+                <h2 className="font-display text-2xl font-bold text-white">MN Property Office</h2>
+                <ul className="mt-5 space-y-4 text-sm text-[#D8D8D8]">
                   <li className="flex gap-3">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[var(--gold)]" />
                     <div>
                       <div className="font-medium leading-relaxed">{SITE.contact.address}</div>
-                      <div className="mt-1 text-xs text-muted-foreground">
+                      <div className="mt-1 text-xs text-[#9A9A9A]">
                         {SITE.contact.coordinates.lat}, {SITE.contact.coordinates.lng}
                       </div>
                     </div>
                   </li>
                   <li className="flex gap-3">
                     <Phone className="h-5 w-5 shrink-0 text-[var(--gold)]" />
-                    <a href={`tel:${SITE.contact.phone.replace(/\s/g, "")}`} className="hover:text-[var(--gold)]">
+                    <a
+                      href={`tel:${SITE.contact.phone.replace(/\s/g, "")}`}
+                      className="hover:text-[var(--gold)] hover:underline"
+                    >
                       {SITE.contact.phone}
                     </a>
                   </li>
                   <li className="flex gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-[var(--gold)]" />
-                    <a href={`mailto:${SITE.contact.email}`} className="break-all hover:text-[var(--gold)]">
+                    <a
+                      href={`mailto:${SITE.contact.email}`}
+                      className="break-all hover:text-[var(--gold)] hover:underline"
+                    >
                       {SITE.contact.email}
                     </a>
                   </li>
                 </ul>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2.5">
                   <a
                     href={waLink("Hi MN Property, I'd like to visit the office.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[var(--whatsapp)] px-4 py-2.5 text-sm font-semibold text-white sm:px-5"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow hover:scale-105 transition-transform"
                   >
                     <MessageCircle className="h-4 w-4" /> WhatsApp
                   </a>
@@ -104,13 +113,13 @@ function Contact() {
                     href={SITE.map.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-navy)] px-4 py-2.5 text-sm font-semibold text-white sm:px-5"
+                    className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/20 hover:scale-105 transition-all"
                   >
-                    <Navigation className="h-4 w-4" /> Get Directions
+                    <Navigation className="h-4 w-4 text-[var(--gold)]" /> Get Directions
                   </a>
                   <button
                     onClick={shareLocation}
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold sm:px-5"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37] px-5 py-2.5 text-sm font-semibold text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black hover:scale-105 transition-all"
                   >
                     <Share2 className="h-4 w-4" /> Share Location
                   </button>
@@ -119,16 +128,22 @@ function Contact() {
             </FadeIn>
 
             <FadeIn delay={150} variant="slide-right">
-              <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8">
-                <h3 className="font-display text-lg font-bold text-foreground">Share this site</h3>
-                <p className="mt-1 text-sm text-muted-foreground">Send to a friend or print the QR code.</p>
+              <div className="rounded-2xl border border-[#2B2B2B] bg-[#131313] p-6 shadow-md sm:p-8 hover:shadow-[0_20px_40px_rgba(212,175,55,0.15)] transition-all duration-300">
+                <h3 className="font-display text-xl font-bold text-white">Share this site</h3>
+                <p className="mt-1 text-sm text-[#9A9A9A]">
+                  Send to a friend or print the QR code.
+                </p>
                 <div className="mt-5 flex flex-wrap items-center gap-6">
                   {qr && (
-                    <img src={qr} alt="QR code" className="h-28 w-28 rounded-xl border border-border sm:h-32 sm:w-32" />
+                    <img
+                      src={qr}
+                      alt="QR code"
+                      className="h-28 w-28 rounded-xl border border-[#2B2B2B] bg-white p-1 sm:h-32 sm:w-32"
+                    />
                   )}
                   <button
                     onClick={shareSite}
-                    className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-gold)] px-4 py-2.5 text-sm font-semibold text-[var(--orange)] sm:px-5"
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-gold)] px-5 py-2.5 text-sm font-bold text-black hover:scale-105 hover:shadow-lg transition-all"
                   >
                     <Share2 className="h-4 w-4" /> Share on WhatsApp
                   </button>
@@ -138,7 +153,7 @@ function Contact() {
           </div>
 
           <FadeIn delay={100} variant="slide-left" className="min-h-0 lg:flex lg:flex-col">
-            <div className="flex min-h-[280px] flex-1 flex-col overflow-hidden rounded-2xl border border-border bg-muted shadow-lg sm:min-h-[340px] lg:min-h-[36rem]">
+            <div className="flex min-h-[280px] flex-1 flex-col overflow-hidden rounded-2xl border border-[#2B2B2B] bg-[#131313] shadow-lg sm:min-h-[340px] lg:min-h-[36rem]">
               <iframe
                 src={SITE.map.embed}
                 title="MN Property office map"
